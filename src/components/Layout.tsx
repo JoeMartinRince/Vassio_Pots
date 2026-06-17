@@ -40,7 +40,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Announcement marquee */}
-      <div className="bg-announce text-announce-foreground overflow-hidden shrink-0">
+      <div className="bg-background text-white overflow-hidden shrink-0">
         <div className="flex animate-marquee whitespace-nowrap py-2 text-xs tracking-wide">
           {[...announcements, ...announcements, ...announcements, ...announcements].map((a, i) => (
             <span key={i} className="mx-10 inline-flex items-center font-medium">
@@ -55,8 +55,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       <header
         className={`shrink-0 sticky top-0 z-40 transition-all duration-300 transform ease-in-out ${
           isScrolled
-            ? "bg-card/95 text-foreground border-b border-border/50 shadow-md backdrop-blur-md"
-            : "bg-muted/40 text-foreground border-b border-border/20 backdrop-blur-md"
+            ? "bg-primary/95 text-primary-foreground border-b border-primary/20 shadow-md backdrop-blur-md"
+            : "bg-primary text-primary-foreground border-b border-primary/10 backdrop-blur-md"
         } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
         <div
@@ -68,9 +68,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-4 z-10">
             {/* Hamburger menu - mobile only */}
             <button
-              className={`lg:hidden transition-colors ${
-                isScrolled ? "text-white hover:text-white/80" : "text-foreground hover:text-primary"
-              }`}
+              className="lg:hidden transition-colors text-primary-foreground hover:opacity-85"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open Menu"
             >
@@ -78,11 +76,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </button>
             {/* Search - desktop only */}
             <button
-              className={`hidden lg:inline-flex items-center gap-2 text-sm transition-colors ${
-                isScrolled
-                  ? "text-white hover:text-white/80"
-                  : "text-foreground/80 hover:text-foreground"
-              }`}
+              className="hidden lg:inline-flex items-center gap-2 text-sm transition-colors text-primary-foreground/80 hover:text-primary-foreground"
               aria-label="Search"
             >
               <Search className="h-5 w-5" />
@@ -96,7 +90,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 src={logo}
                 alt="VASSIO Logo"
                 className={`w-auto object-contain transition-all duration-300 ${
-                  isScrolled ? "brightness-0 invert h-6 md:h-8" : "h-7 md:h-9"
+                  isScrolled ? "h-6 md:h-8" : "h-7 md:h-9"
                 }`}
               />
             </Link>
@@ -106,11 +100,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-4 sm:gap-5 z-10">
             {/* Search - mobile only */}
             <button
-              className={`lg:hidden transition-colors ${
-                isScrolled
-                  ? "text-white hover:text-white/80"
-                  : "text-foreground/80 hover:text-foreground"
-              }`}
+              className="lg:hidden transition-colors text-primary-foreground/80 hover:text-primary-foreground"
               aria-label="Search"
             >
               <Search className="h-5 w-5" />
@@ -118,28 +108,18 @@ export default function Layout({ children }: { children: ReactNode }) {
             {/* Wishlist */}
             <button
               aria-label="Wishlist"
-              className={`transition-colors ${
-                isScrolled
-                  ? "text-white hover:text-white/80"
-                  : "text-foreground/80 hover:text-foreground"
-              }`}
+              className="transition-colors text-primary-foreground/80 hover:text-primary-foreground"
             >
               <Heart className="h-5 w-5" />
             </button>
             {/* Cart */}
             <button
               aria-label="Cart"
-              className={`relative transition-colors ${
-                isScrolled
-                  ? "text-white hover:text-white/80"
-                  : "text-foreground/80 hover:text-foreground"
-              }`}
+              className="relative transition-colors text-primary-foreground/80 hover:text-primary-foreground"
             >
               <ShoppingBag className="h-5 w-5" />
               <span
-                className={`absolute -right-2 -top-2 grid h-4 w-4 place-items-center rounded-full text-[10px] font-bold transition-all duration-300 ${
-                  isScrolled ? "bg-primary-foreground text-primary" : "bg-announce text-announce-foreground"
-                }`}
+                className="absolute -right-2 -top-2 grid h-4 w-4 place-items-center rounded-full text-[10px] font-bold bg-primary-foreground text-primary"
               >
                 0
               </span>
@@ -149,13 +129,13 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         {/* Nav (Desktop) */}
         {!isScrolled && (
-          <nav className="hidden lg:block border-t border-border/30 animate-in fade-in duration-300">
-            <ul className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-center gap-x-7 gap-y-2 px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/85">
+          <nav className="hidden lg:block border-t border-primary-foreground/15 animate-in fade-in duration-300">
+            <ul className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-center gap-x-7 gap-y-2 px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">
               {navLinks.map((l) => (
                 <li key={l}>
                   <Link
                     to="/"
-                    className={`hover:text-primary transition-colors ${l === "Last Chance" ? "text-announce" : ""}`}
+                    className={`hover:text-primary-foreground transition-colors ${l === "Last Chance" ? "font-bold underline decoration-2" : ""}`}
                   >
                     {l}
                   </Link>
