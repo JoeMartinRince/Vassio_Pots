@@ -208,7 +208,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground shrink-0 mt-auto">
+      <footer className="bg-card text-foreground shrink-0 mt-auto">
         <div className="mx-auto max-w-[1400px] px-6 py-12 md:py-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-12">
             {/* Brand column */}
@@ -218,11 +218,11 @@ export default function Layout({ children }: { children: ReactNode }) {
                 alt="VASSIO Logo"
                 className="h-8 w-auto brightness-0 invert object-contain"
               />
-              <p className="mt-6 text-sm leading-relaxed text-primary-foreground/70 max-w-xs">
+              <p className="mt-6 text-sm leading-relaxed text-foreground/70 max-w-xs">
                 Vassio brings warmth, craft and calm into your home — discover furniture, planters,
                 decor, bedding, bath and kitchen essentials.
               </p>
-              <div className="mt-6 flex gap-4 text-primary-foreground/80">
+              <div className="mt-6 flex gap-4 text-foreground/80">
                 <a href="#" aria-label="Instagram" className="hover:text-white transition-colors">
                   <Instagram className="h-4 w-4" />
                 </a>
@@ -238,7 +238,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             {/* Quick Links */}
             <div className="col-span-1">
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Quick Links</p>
-              <ul className="mt-6 space-y-3.5 text-sm text-primary-foreground/70">
+              <ul className="mt-6 space-y-3.5 text-sm text-foreground/70">
                 {navLinks.map((l) => (
                   <li key={l}>
                     <Link to="/" className="hover:text-white transition-colors">
@@ -252,7 +252,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             {/* Support */}
             <div className="col-span-1">
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Support</p>
-              <ul className="mt-6 space-y-3.5 text-sm text-primary-foreground/70">
+              <ul className="mt-6 space-y-3.5 text-sm text-foreground/70">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     FAQs
@@ -284,14 +284,14 @@ export default function Layout({ children }: { children: ReactNode }) {
             {/* Newsletter */}
             <div className="col-span-2 lg:col-span-1">
               <p className="text-xs uppercase tracking-[0.2em] font-bold">Newsletter</p>
-              <p className="mt-6 text-sm text-primary-foreground/70 leading-relaxed">
+              <p className="mt-6 text-sm text-foreground/70 leading-relaxed">
                 Subscribe to receive inspiration, updates, and exclusive access to new launches.
               </p>
               <form className="mt-5 flex gap-2" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="flex-1 border-b border-primary-foreground/45 bg-transparent py-2.5 text-sm placeholder:text-primary-foreground/40 focus:border-primary-foreground focus:outline-none transition-colors"
+                  className="flex-1 border-b border-foreground/30 bg-transparent py-2.5 text-sm placeholder:text-foreground/40 focus:border-foreground focus:outline-none transition-colors"
                   required
                 />
                 <button
@@ -305,7 +305,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
 
           {/* Copyright line */}
-          <div className="mt-10 md:mt-16 border-t border-primary-foreground/15 pt-6 md:pt-8 text-center text-xs text-primary-foreground/50">
+          <div className="mt-10 md:mt-16 border-t border-foreground/15 pt-6 md:pt-8 text-center text-xs text-foreground/50">
             © {new Date().getFullYear()} Vassio. All rights reserved.
           </div>
         </div>
